@@ -13,8 +13,8 @@ class CustomUserAdmin(UserAdmin):
     add_form = UserCreationForm
 
     model = User
-    list_display = ("phone", "first_name", "last_name", "role", "is_active")
-    list_filter = ("phone", "role", "is_active")
+    list_display = ("phone", "first_name", "last_name", "role", "is_active", "is_staff", "is_superuser")
+    list_filter = ("phone", "role", "is_active", "is_superuser")
     searching_fields = ("phone",)
     ordering = ("phone",)
     filter_horizontal = []
@@ -30,6 +30,8 @@ class CustomUserAdmin(UserAdmin):
             {
                 "fields": (
                     "is_active",
+                    "is_staff",
+                    "is_superuser",
                 ),
             },
         ),
@@ -56,6 +58,8 @@ class CustomUserAdmin(UserAdmin):
                     "password1",
                     "password2",
                     "is_active",
+                    "is_staff",
+                    "is_superuser",
                 ),
             },
         ),

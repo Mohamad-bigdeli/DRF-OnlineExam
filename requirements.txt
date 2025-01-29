@@ -1,0 +1,32 @@
+# general  modules
+django >3.2,<3.3
+python-decouple
+#Pillow
+djangorestframework
+
+
+# third party modules
+#markdown       
+#django-filter  
+drf-yasg[validation]
+djangorestframework-simplejwt
+
+
+# deployment module
+gunicorn
+
+# sms third party modules
+kavenegar
+
+# refactoring and tests
+# black
+# flake8
+# pytest
+# pytest-django
+# Faker
+
+# # background proccess and cache
+# celery
+# redis
+# django-redis
+

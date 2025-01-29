@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 from decouple import config
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,9 +32,16 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-APPS = ["accounts"]
+APPS = [
+        "accounts",
+        "authentication"
+]
 
-INSTALLED_PACKAGES = ["rest_framework"]
+INSTALLED_PACKAGES = [
+    "rest_framework",
+    "rest_framework_simplejwt",
+    "drf_yasg"
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -130,3 +138,35 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = "accounts.User"
+
+# rest framework settings
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',   
+    ],
+}
+
+# jwt settings
+
+# JWT_SECRET = config("JWT_SECRET")
+# JWT_AUDIENCE = config("JWT_AUDIENCE")
+# JWT_ISSUER = config("JWT_ISSUER")
+JWT_SECRET = "1M_SvRWK8W3DAmztL62N2iQIp1y_8GdDBH3ljogtpdfyitTIGHizWw"
+JWT_AUDIENCE = "localhost:8000"
+JWT_ISSUER = "localhost:8000"
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(hours=12),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "ROTATE_REFRESH_TOKENS": True,
+    "SIGNING_KEY": JWT_SECRET,
+    "AUDIENCE": JWT_AUDIENCE,
+    "ISSUER": JWT_ISSUER,
+    "AUTH_HEADER_TYPES": ("Bearer",),
+    "USER_ID_FIELD": "id",
+    "USER_ID_CLAIM": "sub",
+}
+
+# otp expire time
+EXPIRY_TIME_OTP = 180
