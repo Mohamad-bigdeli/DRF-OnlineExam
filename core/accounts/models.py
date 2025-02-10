@@ -34,4 +34,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     def is_student(self):
         return self.role == choices.USER_ROLE_STUDENT
     
+    @property
+    def full_name(self):
+        return self.first_name + " " + self.last_name
+    
     

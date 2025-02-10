@@ -34,7 +34,8 @@ ALLOWED_HOSTS = []
 
 APPS = [
         "accounts",
-        "authentication"
+        "authentication",
+        "exam"
 ]
 
 INSTALLED_PACKAGES = [
@@ -145,6 +146,12 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',   
     ],
+    "DEFAULT_THROTTLE_RATES": {
+        "anon": "100/day",
+        "reply": "100/minute",
+        "next_question": "100/minute",
+        "finish": "10/minute",
+    },
 }
 
 # jwt settings

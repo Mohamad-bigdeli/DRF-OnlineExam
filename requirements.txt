@@ -10,6 +10,7 @@ djangorestframework
 #django-filter  
 drf-yasg[validation]
 djangorestframework-simplejwt
+drf-nested-routers
 
 
 # deployment module
