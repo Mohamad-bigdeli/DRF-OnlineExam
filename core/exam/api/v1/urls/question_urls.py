@@ -5,9 +5,8 @@ app_name = "api-v1"
 
 router = DefaultRouter()
 
-urlpatterns = [
-]
+urlpatterns = []
 
 router.register(r"questions", QuestionViewSet, basename="questions")
 
-urlpatterns+=router.urls
+urlpatterns += router.urls

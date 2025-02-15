@@ -21,7 +21,7 @@ services:
     restart: always
     command: redis-server --save 60 1 --loglevel warning
     depends_on:
-      - redis
+      - db
 
   backend:
     build: .

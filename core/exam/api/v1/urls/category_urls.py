@@ -5,11 +5,11 @@ app_name = "api-v1"
 
 router = DefaultRouter()
 
-urlpatterns = [
-
-]
+urlpatterns = []
 
 router.register(r"categories", CategoryViewSet, basename="categories")
-router.register(r"favorite-categories", FavoriteCategoryViewSet, basename="favorite-categories")
+router.register(
+    r"favorite-categories", FavoriteCategoryViewSet, basename="favorite-categories"
+)
 
-urlpatterns+=router.urls
+urlpatterns += router.urls

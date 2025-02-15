@@ -7,12 +7,9 @@ from .exam_serializer import (
     ExamRelatedSerializer,
     ExamListSerializer,
     ExamRetrieveSerializer,
-    ExamCreateUpdateSerializer
+    ExamCreateUpdateSerializer,
 )
-from .answer_serializer import (
-    AnswerListRetrieveSerializer,
-    AnswerCreateSerializer
-)
+from .answer_serializer import AnswerListRetrieveSerializer, AnswerCreateSerializer
 from .question_serializer import (
     RelatedQuestionSerializer,
     RelatedQuestionOptionSerializer,
@@ -24,7 +21,6 @@ from .question_serializer import (
     QuestionRetrieveSerializer,
     QuestionOptionListSerializer,
     QuestionCreateUpdateSerializers,
-
 )
 from .score_serializer import (
     ScoreListRetrieveSerializer,
@@ -56,5 +52,5 @@ all = [
     "ScoreListRetrieveSerializer",
     "ScoreSerializer",
     "StudentScoreListRetrieveSerializer",
-    "ScoreBoardSerializer"
+    "ScoreBoardSerializer",
 ]

@@ -1,18 +1,22 @@
 from django.urls import path, include
-from ..views import (UserRegistrationApiView, UserDestroyApiView,
-                    CustomTokenObtainPairView, ChangePasswordApiView)
+from ..views import (
+    UserRegistrationApiView,
+    UserDestroyApiView,
+    CustomTokenObtainPairView,
+    ChangePasswordApiView,
+)
 from rest_framework_simplejwt.views import (
     TokenRefreshView,
     TokenVerifyView,
 )
 
-urlpatterns =[
+urlpatterns = [
     # registration
     path("register/", UserRegistrationApiView.as_view(), name="register"),
     # delete user
     path("delete/", UserDestroyApiView.as_view(), name="delete"),
     # change password
-   path(
+    path(
         "change-password/",
         ChangePasswordApiView.as_view(),
         name="change-password",

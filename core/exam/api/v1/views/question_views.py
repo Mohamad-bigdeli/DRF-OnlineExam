@@ -8,8 +8,13 @@ from authentication.permissions import (
     IsInstructor,
     IsInstructorExamOwner,
 )
-from ..serializers import (AdminQuestionListSerializer, AdminQuestionRetrieveSerializer, 
-                        QuestionCreateUpdateSerializers, QuestionListSerializer, QuestionRetrieveSerializer)
+from ..serializers import (
+    AdminQuestionListSerializer,
+    AdminQuestionRetrieveSerializer,
+    QuestionCreateUpdateSerializers,
+    QuestionListSerializer,
+    QuestionRetrieveSerializer,
+)
 from ....models import Question
 
 

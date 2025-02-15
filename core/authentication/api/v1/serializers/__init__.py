@@ -1,10 +1,12 @@
-from .otp import(OTPRequestSerializer,
-                 OTPVerifySerializer,
-                )
-from .users import (RegistrationSerializer,
-                    CustomTokenObtainPairSerializer,
-                    ChangePasswordSerializer
-                    )
+from .otp import (
+    OTPRequestSerializer,
+    OTPVerifySerializer,
+)
+from .users import (
+    RegistrationSerializer,
+    CustomTokenObtainPairSerializer,
+    ChangePasswordSerializer,
+)
 
 all = [
     "OTPRequestSerializer",

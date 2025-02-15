@@ -6,6 +6,7 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 User = get_user_model()
 
+
 class RegistrationSerializer(serializers.ModelSerializer):
     password = serializers.CharField(max_length=255, write_only=True)
     password1 = serializers.CharField(max_length=255, write_only=True)
@@ -17,22 +18,25 @@ class RegistrationSerializer(serializers.ModelSerializer):
     def validate(self, attrs):
         if attrs.get("password") != attrs.get("password1"):
             raise serializers.ValidationError({"detail": "password doesn't match"})
-        phone=attrs.get("phone")
-        if User.objects.filter(phone=phone).exists(): 
-                raise serializers.ValidationError({'detail':'Phone already exist.'})
+        phone = attrs.get("phone")
+        if User.objects.filter(phone=phone).exists():
+            raise serializers.ValidationError({"detail": "Phone already exist."})
         if not phone.isdigit():
-            raise serializers.ValidationError({'detail':'Invalid phone number.'})
-        if not phone.startswith('09'):
-            raise serializers.ValidationError({'detail':'Phone must start with 09 digits.'})
+            raise serializers.ValidationError({"detail": "Invalid phone number."})
+        if not phone.startswith("09"):
+            raise serializers.ValidationError(
+                {"detail": "Phone must start with 09 digits."}
+            )
         try:
             validate_password(attrs.get("password"))
         except exceptions.ValidationError as e:
             raise serializers.ValidationError({"password": list(e.messages)})
         return super().validate(attrs)
-    
+
     def create(self, validated_data):
         validated_data.pop("password1", None)
         return User.objects.create_user(**validated_data)
+
 
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
 
@@ -41,7 +45,8 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
         validate_data["phone"] = self.user.phone
         validate_data["user_id"] = self.user.pk
         return validate_data
-    
+
+
 class ChangePasswordSerializer(serializers.Serializer):
     old_password = serializers.CharField(required=True)
     new_password = serializers.CharField(required=True)

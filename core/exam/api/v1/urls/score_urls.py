@@ -5,12 +5,10 @@ app_name = "api-v1"
 
 router = DefaultRouter()
 
-urlpatterns = [
-
-]
+urlpatterns = []
 
 router.register(r"scores", ScoreViewSet, basename="scores")
 
 router.register(r"my-scores", MyScoreViewSet, basename="my-scores")
 
-urlpatterns+=router.urls
+urlpatterns += router.urls

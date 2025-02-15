@@ -8,12 +8,20 @@ class CustomUserAdmin(UserAdmin):
     """
     Custom admin panel for user management with add and change forms plus password
     """
-    
+
     form = UserChangeForm
     add_form = UserCreationForm
 
     model = User
-    list_display = ("phone", "first_name", "last_name", "role", "is_active", "is_staff", "is_superuser")
+    list_display = (
+        "phone",
+        "first_name",
+        "last_name",
+        "role",
+        "is_active",
+        "is_staff",
+        "is_superuser",
+    )
     list_filter = ("phone", "role", "is_active", "is_superuser")
     searching_fields = ("phone",)
     ordering = ("phone",)
@@ -64,5 +72,6 @@ class CustomUserAdmin(UserAdmin):
             },
         ),
     )
+
 
 admin.site.register(User, CustomUserAdmin)

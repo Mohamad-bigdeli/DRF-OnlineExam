@@ -1,17 +1,18 @@
-from .otp import( OTPRequestApiView,
-                  OTPVerifyApiView,
-                )
-from .users import (UserRegistrationApiView,
-                    UserDestroyApiView,
-                    CustomTokenObtainPairView,
-                    ChangePasswordApiView,
-                    )
+from .otp import (
+    OTPRequestApiView,
+    OTPVerifyApiView,
+)
+from .users import (
+    UserRegistrationApiView,
+    UserDestroyApiView,
+    CustomTokenObtainPairView,
+    ChangePasswordApiView,
+)
 
 all = [
     "OTPRequestApiView",
     "OTPVerifyApiView",
-    "UserRegistrationApiView"
-    "UserDestroyApiView",
+    "UserRegistrationApiView" "UserDestroyApiView",
     "CustomTokenObtainPairView",
-    "ChangePasswordApiView"
+    "ChangePasswordApiView",
 ]

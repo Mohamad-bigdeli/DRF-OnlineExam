@@ -1,12 +1,14 @@
-from rest_framework import serializers 
+from rest_framework import serializers
 from ....models import Exam
 from accounts.serializers import RelatedUserSerializer
+
 
 class ExamRelatedSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Exam
         fields = ["id", "title"]
+
 
 class ExamListSerializer(serializers.ModelSerializer):
     instructor = RelatedUserSerializer()
@@ -15,6 +17,7 @@ class ExamListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Exam
         exclude = ["description"]
+
 
 class ExamRetrieveSerializer(serializers.ModelSerializer):
     instructor = RelatedUserSerializer()
@@ -31,6 +34,7 @@ class ExamRetrieveSerializer(serializers.ModelSerializer):
             "duration",
             "created",
         ]
+
 
 class ExamCreateUpdateSerializer(serializers.ModelSerializer):
 

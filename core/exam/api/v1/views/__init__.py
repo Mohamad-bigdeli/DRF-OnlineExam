@@ -2,21 +2,14 @@ from .category_views import (
     CategoryViewSet,
     FavoriteCategoryViewSet,
 )
-from .exam_views import (
-    ExamViewSet
-)
-from .answer_views import (
-    AnswerViewSet
-)
-from .question_views import (
-    QuestionViewSet,
-    ExamQuestionViewSet
-)
+from .exam_views import ExamViewSet
+from .answer_views import AnswerViewSet
+from .question_views import QuestionViewSet, ExamQuestionViewSet
 from .score_views import (
     ScoreViewSet,
     ExamScoreViewSet,
     MyScoreViewSet,
-    ScoreBoardViewSet
+    ScoreBoardViewSet,
 )
 
 all = [
@@ -25,5 +18,5 @@ all = [
     "ExamViewSet",
     "AnswerViewSet",
     "QuestionViewSet",
-    "ExamQuestionViewSet"
+    "ExamQuestionViewSet",
 ]

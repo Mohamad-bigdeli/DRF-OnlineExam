@@ -5,6 +5,7 @@ from .managers import UserManager
 
 # Create your models here.
 
+
 class User(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length=225)
     last_name = models.CharField(max_length=225)
@@ -25,17 +26,15 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.phone
-    
+
     @property
     def is_instructor(self):
         return self.role == choices.USER_ROLE_INSTRUCTOR
-    
+
     @property
     def is_student(self):
         return self.role == choices.USER_ROLE_STUDENT
-    
+
     @property
     def full_name(self):
         return self.first_name + " " + self.last_name
-    
-    
