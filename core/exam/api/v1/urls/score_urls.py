@@ -1,6 +1,8 @@
 from rest_framework.routers import DefaultRouter
 from ..views import ScoreViewSet, MyScoreViewSet
 
+app_name = "api-v1"
+
 router = DefaultRouter()
 
 urlpatterns = [

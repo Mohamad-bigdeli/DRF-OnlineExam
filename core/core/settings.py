@@ -89,13 +89,23 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('DB_NAME'),       
+        'USER': config('DB_USER'),       
+        'PASSWORD': config('DB_PASSWORD'), 
+        'HOST': config('DB_HOST', default='db'),
+        'PORT': config('DB_PORT', default='5432'), 
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -177,3 +187,15 @@ SIMPLE_JWT = {
 
 # otp expire time
 EXPIRY_TIME_OTP = 180
+
+# caching configs
+CACHES = {
+    "default" : {
+        "BACKEND" : "django_redis.cache.RedisCache",
+        "LOCATION" : "redis://redis:6379/1",
+        "TIME_OUT" : 120,
+        "OPTIONS" : {
+            "CLIENT" : "django_redis.client.DefaultClient",
+        }
+    }
+}

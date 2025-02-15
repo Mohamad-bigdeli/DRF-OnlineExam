@@ -1,7 +1,6 @@
 # general  modules
 django >3.2,<3.3
 python-decouple
-#Pillow
 djangorestframework
 
 
@@ -11,7 +10,7 @@ djangorestframework
 drf-yasg[validation]
 djangorestframework-simplejwt
 drf-nested-routers
-
+psycopg2-binary
 
 # deployment module
 gunicorn
@@ -20,14 +19,14 @@ gunicorn
 kavenegar
 
 # refactoring and tests
-# black
-# flake8
-# pytest
-# pytest-django
-# Faker
+black
+flake8
+pytest
+pytest-django
+
 
 # # background proccess and cache
 # celery
-# redis
-# django-redis
+redis
+django-redis
 

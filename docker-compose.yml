@@ -1,5 +1,28 @@
 version: '3.7'
 services:
+
+  db:
+    container_name: db  
+    image: postgres:alpine
+    environment:
+      POSTGRES_DB: ${DB_NAME}     
+      POSTGRES_USER: ${DB_USER}     
+      POSTGRES_PASSWORD: ${DB_PASSWORD} 
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+
+  redis:
+    container_name: redis
+    image: redis
+    ports:
+      - "6379:6379"
+    restart: always
+    command: redis-server --save 60 1 --loglevel warning
+    depends_on:
+      - redis
+
   backend:
     build: .
     container_name: "backend"
@@ -11,4 +34,14 @@ services:
     environment:
       - SECRET_KEY=test
       - DEBUG=True
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_HOST=db
+      - DB_PORT=5432
+    depends_on:
+      - db
+      - redis
 
+volumes:
+  postgres_data:

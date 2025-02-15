@@ -2,6 +2,8 @@ from rest_framework.routers import DefaultRouter
 from ..views import ExamViewSet, AnswerViewSet, ExamQuestionViewSet, ExamScoreViewSet, ScoreBoardViewSet
 from rest_framework_nested import routers
 
+app_name = "api-v1"
+
 router = DefaultRouter()
 
 urlpatterns = []
