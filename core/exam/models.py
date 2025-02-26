@@ -6,7 +6,6 @@ User = get_user_model()
 
 # Create your models here.
 
-
 class Category(models.Model):
     title = models.CharField(max_length=225, unique=True)
     created = models.DateTimeField(auto_now_add=True)
