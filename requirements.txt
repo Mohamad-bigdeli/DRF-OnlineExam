@@ -4,9 +4,7 @@ python-decouple
 djangorestframework
 
 
-# third party modules
-#markdown       
-#django-filter  
+# third party modules  
 drf-yasg[validation]
 djangorestframework-simplejwt
 drf-nested-routers
@@ -25,8 +23,7 @@ pytest
 pytest-django
 
 
-# # background proccess and cache
-# celery
+# cache
 redis
 django-redis
 
