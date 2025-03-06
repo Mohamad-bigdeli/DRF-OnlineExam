@@ -96,9 +96,9 @@ else:
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql",
-            "NAME": config("DB_NAME", default="db"),
-            "USER": config("DB_USER", default="admin"),
-            "PASSWORD": config("DB_PASSWORD", default="admin"),
+            "NAME": config("DB_NAME"),
+            "USER": config("DB_USER"),
+            "PASSWORD": config("DB_PASSWORD"),
             "HOST": config("DB_HOST", default="db"),
             "PORT": config("DB_PORT", default="5432"),
         }
@@ -171,12 +171,9 @@ REST_FRAMEWORK = {
 
 # jwt settings
 
-# JWT_SECRET = config("JWT_SECRET")
-# JWT_AUDIENCE = config("JWT_AUDIENCE")
-# JWT_ISSUER = config("JWT_ISSUER")
-JWT_SECRET = "1M_SvRWK8W3DAmztL62N2iQIp1y_8GdDBH3ljogtpdfyitTIGHizWw"
-JWT_AUDIENCE = "localhost:8000"
-JWT_ISSUER = "localhost:8000"
+JWT_SECRET = config("JWT_SECRET")
+JWT_AUDIENCE = config("JWT_AUDIENCE")
+JWT_ISSUER = config("JWT_ISSUER")
 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(hours=12),
