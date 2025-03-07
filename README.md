@@ -38,7 +38,7 @@ With a focus on security, scalability, and user-centric design, this system offe
 
 - PostgreSQL: A powerful, open-source relational database management system used in this project for data storage and management.
 
-- Redis : Serves as both a caching layer and message broker for Celery.
+- Redis : Serves as a caching layer.
 
 - Swagger : Provides interactive API documentation for easy testing and integration.
 
