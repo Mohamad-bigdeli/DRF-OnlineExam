@@ -64,14 +64,14 @@ To set up the project, follow the steps below:
    Clone the project repository to your local machine:
 
    ```bash
-   git clone https://github.com/Mohamad-bigdeli/Django-Api-Blog.git
+   git clone https://github.com/Mohamad-bigdeli/DRF-OnlineExam.git
 
 2. **Navigate to the Project Folder**
 
     Move into the project directory using the cd command:
 
     ```bash
-    cd Django-Api-Blog
+    cd DRF-OnlineExam
     
 
 3. **Start Docker Compose** 
