@@ -6,7 +6,7 @@ With a focus on security, scalability, and user-centric design, this system offe
 
 <h1>db Diagram</h1>
 
-![db Diagram](https://github.com/Mohamad-bigdeli/DRF-OnlineExam/docs/exam.png)
+![db Diagram](https://raw.githubusercontent.com/Mohamad-bigdeli/DRF-OnlineExam/main/docs/exam.png)
 
 <h1>Technologies</h1>
 
